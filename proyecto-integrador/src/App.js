@@ -1,10 +1,13 @@
 import React from "react";
+import Navegacion from "./components/Navegacion/Navegacion";
 
 function App() {
   return (
-    <div className="App">
-     <h1>Bienvenidos a react </h1>
-    </div>
+    <React.Fragment>
+
+      <Navegacion/>
+
+    </React.Fragment>
   );
 }
 
