@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 function OpcionesMenu(props){
     return(
@@ -6,7 +7,9 @@ function OpcionesMenu(props){
         {
             props.opciones.map((elm, idx) => (
                 <li key={idx}>
-                    <a href={elm.path}>{elm.nombre}</a>
+                    <Link to={elm.path}>
+                        {elm.nombre}
+                    </Link>
                 </li>
             ))
         }
