@@ -1,5 +1,5 @@
 import React from "react"
-import OpcionesMenu from "./OpcionesMenu";
+import OpcionesMenu from "../Header/OpcionesMenu";
 import './styles.css'
 
 function Navegacion () {
@@ -34,3 +34,4 @@ function Navegacion () {
 
 
 export default Navegacion;
+

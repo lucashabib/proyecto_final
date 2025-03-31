@@ -1,10 +1,15 @@
 import React from "react";
-import OpcionesMenu from "../Navegacion/OpcionesMenu";
+import Navegacion from "../Navegacion/Navegacion";
 
 function Header(){
     return (
         <header>
             
+            
+            <Navegacion/>
+
         </header>
     )
 }
+
+export default Header
