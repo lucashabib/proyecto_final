@@ -3,16 +3,15 @@ import {Link} from 'react-router-dom';
 
 function OpcionesMenu(props){
     return(
-        <ul className="menu">
-        {
-            props.opciones.map((elm, idx) => (
-                <li key={idx}>
+        <ul className="OpcionesMenu">
+            {
+                props.opciones.map((elm, idx) => 
+                <li key={`${elm.nombre}-${idx}`}> 
                     <Link to={elm.path}>
-                        {elm.nombre}
+                        {elm.nombre} 
                     </Link>
-                </li>
-            ))
-        }
+                </li>)
+            }
     </ul>
     );
 }
