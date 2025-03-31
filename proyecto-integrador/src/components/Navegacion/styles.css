@@ -1,0 +1,43 @@
+/* Contenedor de la navegación */
+
+.Navegacion {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    text-align: center;
+    margin-top: 150px;
+    
+}
+
+header {
+    position: relative;
+    align-items: center;
+    background-color: #dce7fc;
+    padding-bottom: 1px;
+}
+
+/* Lista del menú */
+.Navegacion ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cada ítem de la lista */
+.Navegacion li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+/* Enlaces */
+.Navegacion a {
+    color: #223A5E;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.Navegacion a:hover {
+    color: #FF6347; /* color al pasar el mouse */
+}
