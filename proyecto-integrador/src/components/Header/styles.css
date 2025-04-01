@@ -1,6 +1,6 @@
-/* Contenedor de la navegación */
+/* Contenedor del Header */
 
-.Navegacion {
+.Header {
     display: flex;
     justify-content: center;
     flex-grow: 1;
@@ -17,20 +17,20 @@ header {
 }
 
 /* Lista del menú */
-.Navegacion ul {
+.Header ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
 /* Cada ítem de la lista */
-.Navegacion li {
+.Header li {
     display: inline-block;
     margin: 0 15px;
 }
 
 /* Enlaces */
-.Navegacion a {
+.Header a {
     color: #223A5E;
     text-decoration: none;
     font-weight: bold;
@@ -38,6 +38,6 @@ header {
     transition: color 0.3s ease;
 }
 
-.Navegacion a:hover {
+.Header a:hover {
     color: #FF6347; /* color al pasar el mouse */
 }
