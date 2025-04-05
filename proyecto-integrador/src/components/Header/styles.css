@@ -1,20 +1,33 @@
 /* Contenedor del Header */
 
 .Header {
+    position: relative; /* Necesario para posicionar el botón */
     display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    text-align: center;
-    margin-top: 150px;
-    
+    flex-direction: column;
+    align-items: center;
+    background-color: #000000;
+    padding: 20px;
+    padding-top: 60px; /* espacio para el botón en la parte superior */
 }
 
-header {
-    position: relative;
-    align-items: center;
-    background-color: #dce7fc;
-    padding-bottom: 1px;
+.FavoritosContainer {
+    position: absolute;
+    bottom: 20px; /* ✅ ubica el botón abajo */
+    right: 30px;  /* ✅ ubica el botón a la derecha */
 }
+
+.Logo {
+    height: 250px;
+    margin-bottom: 10px;
+    margin-right: 115px;
+}
+
+.OpcionesMenu {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
 
 /* Lista del menú */
 .Header ul {
@@ -31,7 +44,7 @@ header {
 
 /* Enlaces */
 .Header a {
-    color: #223A5E;
+    color: #00B5F1;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
@@ -41,3 +54,5 @@ header {
 .Header a:hover {
     color: #FF6347; /* color al pasar el mouse */
 }
+
+
