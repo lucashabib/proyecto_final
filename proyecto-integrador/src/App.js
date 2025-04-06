@@ -5,6 +5,7 @@ import Home from "./screens/Home/Home";
 import NotFound from "./screens/NotFound/NotFound";
 import SeccionPeliculas from "./components/SeccionPeliculas.js/SeccionPeliculas";
 
+
 function App() {
   
   return (

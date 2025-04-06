@@ -1,5 +1,6 @@
 import React from "react";
 import Pelicula from "./Pelicula";
+import './styles.css'
 
 function SeccionPeliculas(){
     const peliculasData = [
@@ -34,11 +35,20 @@ function SeccionPeliculas(){
     ]
 
     return (
-        <section className='peliculas-populares'>
+        <section className='contenedor'>
 
+            <h3 className="titulo-seccion">Peliculas en cartelera</h3>
+
+
+
+            <div className='peliculas-populares'>
             {
                 peliculasData.map((elm, idx)=> <Pelicula data={elm}/> )
             }
+            </div>
+
+
+           
            
 
 
