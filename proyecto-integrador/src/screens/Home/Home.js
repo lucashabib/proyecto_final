@@ -3,7 +3,7 @@ import React from "react";
 function Home(){
     return(
         <h1>
-            Bienvenido a Swift Cart
+            Bienvenido a cine score
         </h1>
     )
 }

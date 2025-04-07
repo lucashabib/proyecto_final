@@ -1,0 +1,553 @@
+
+
+/* Estilos para el header */
+body {
+    background-color: #223A5E;
+}
+
+header {
+    position: relative;
+    align-items: center;
+    background-color: #dce7fc;
+    padding-bottom: 1px;
+}
+
+.Logo-principal {
+    position: absolute;
+    top: 0;
+    left: 54%;
+    transform: translateX(-50%);
+    z-index: 1;
+    max-width: 500px;
+    max-height: 250px;
+}
+
+a {
+    color: black; 
+    text-decoration: none;
+}
+
+.Logo-principal img {
+    width: 75%;
+    height: auto;
+}
+
+.Header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para la navegación */
+.Navegacion {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1; /* Permite que la navegación ocupe el espacio restante */
+    text-align: center; /* Centra los elementos */
+    margin-top: 150px; 
+}
+
+.Navegacion ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.saludo{
+    color:#223A5E;
+}
+
+#logout-link{
+    margin-left: 10px;
+}
+
+.Navegacion a {
+    color: #223A5E;
+}
+
+.Navegacion li {
+    display: inline;
+    margin-right: 20px; 
+}
+
+/* Estilos para la barra de búsqueda y el carrito */
+.Carrito { 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: auto;
+}
+
+.Carrito img {
+    max-width: 30px; 
+    margin-right: 20px;
+    margin-top: -50px;
+}
+
+.registro { 
+    display: flex;
+    justify-content: left;
+    flex-grow: 1; /* Permite que la navegación ocupe el espacio restante */
+    text-align: left; /* Centra los elementos */
+    margin-top: -30px; 
+    margin-bottom: 60px;
+    margin-left: 10px;
+}
+
+.registro a {
+    color: #223A5E;
+}
+
+
+
+/* Estilos para el icono del menú de hamburguesa */
+.mobile-menu-icon {
+    display: none; /* Oculta el icono del menú de hamburguesa en pantallas más grandes */
+}
+
+.mobile-menu-icon i {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Estilos para el icono del menú de hamburguesa en dispositivos móviles */
+
+
+
+
+
+
+.Productos {
+    display: flex;
+    flex-wrap: nowrap; /* Esto evita que los elementos se envuelvan */
+    justify-content: space-around;
+    margin: 20px 0;
+    margin-top: 35px;
+    overflow-x: auto; /* Añadir scroll horizontal si los elementos no caben en pantalla */
+}
+
+.Productos .productov {
+    flex: 0 0 auto; /* Asegura que los elementos mantengan su tamaño */
+    width: 200px; /* Ancho fijo para cada elemento */
+    margin: 0 5px; /* Espacio entre elementos */
+}
+
+
+.Productos > div {
+    flex-basis: calc(20% - 20px); 
+    margin: 10px; 
+    text-align: center; 
+}
+
+.Productos img {
+    width: 100%; 
+    height: 250px; 
+}
+
+.Recomendados {
+    display: flex;
+    flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    margin: 20px 0;
+    margin-top: 35px;
+    overflow-x: auto; /* Agrega scroll horizontal si es necesario */
+}
+
+.Recomendados .productov {
+    flex: 0 0 auto; /* Asegura que los elementos mantengan su tamaño */
+    width: 200px; /* Ancho fijo para cada elemento */
+    margin: 0 5px; /* Espacio entre elementos */
+
+}
+
+.Recomendados > div {
+    flex-basis: calc(20% - 20px); 
+    margin: 10px; 
+    text-align: center; 
+}
+
+
+.Recomendados img {
+    max-width: 100%; /* Ajusta el ancho de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* aca cambie el class de todos los productos que aparecen asi puedo usar el mismo css para todos */
+
+.productov img{
+
+    max-width: 200px;
+    margin-left: auto;
+    margin-top: 10px;
+    object-fit: scale-down; /* Para que la foto no este deforme */
+    
+}
+
+.productov{
+    border: 3px solid grey;
+    background-color: #dce7fc ;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+   
+
+    
+}
+
+/* uso el mismo class de "agregar-al carrito" para el "ver mas tambien asi no tengo que volver a escribir todo */
+
+.agregar-carrito {
+    display: inline-block; /* Hace que el enlace se comporte como un bloque */
+    padding: 10px 20px; /* Espacio alrededor del texto */
+    border: 2px solid #223A5E; /* Borde alrededor del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #dce7fc; /* Color de fondo */
+    color: black; 
+    text-decoration: none; 
+    margin-top: 5px;
+
+}
+
+.agregar-carrito:hover {
+    background-color: #cfd9f6; 
+}
+
+
+
+
+h2{
+    color:grey;
+    margin-top: 40px;
+}
+
+.empty{
+    color:grey;
+    margin-top: 20px;
+}
+
+#finalizarCompra{
+    margin-bottom: 20px;
+}
+
+.Prendas {
+    display: flex;
+    flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    margin: 20px 0;
+    margin-top: 35px;
+    overflow-x: auto; /* Agrega scroll horizontal si es necesario */
+}
+
+.Prendas .productov {
+    flex: 0 0 auto; /* Asegura que los elementos mantengan su tamaño */
+    width: 200px; /* Ancho fijo para cada elemento */
+    margin: 0 5px; /* Espacio entre elementos */
+}
+
+.Prendas > div{
+    flex-basis: calc(20% - 20px); 
+    margin: 0 10px;
+    text-align: center;
+}
+
+.Prendas img {
+    width: 100%; 
+    height: 250px; 
+}
+
+
+.Nombres-de-participantes {
+    list-style: none;
+}
+
+
+
+
+
+
+footer {
+    border: 3px solid grey;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    background-color:#dce7fc;
+    
+
+}
+
+ul.nombres{
+    list-style: none;
+}
+
+ul.iconos{
+    list-style: none;
+
+}
+
+ul.iconos li{
+    display: inline;
+    margin-right: 20px;
+}
+
+
+.Productos-carrito {
+    display: flex;
+    flex-wrap: nowrap; /* Esto evita que los elementos se envuelvan */
+    justify-content: space-around;
+    margin: 20px 0;
+    margin-top: 35px;
+    overflow-x: auto; /* Añadir scroll horizontal si los elementos no caben en pantalla */
+}
+
+.Productos-carrito .producto1 {
+    flex: 0 0 auto; /* Asegura que los elementos mantengan su tamaño */
+    width: 200px; /* Ancho fijo para cada elemento */
+    margin: 0 5px; /* Espacio entre elementos */
+}
+
+
+.Productos-carrito > div {
+    flex-basis: calc(20% - 20px); 
+    margin: 10px; 
+    text-align: center; 
+}
+
+.Productos-carrito img {
+    width: 100%; 
+}
+
+h3
+{color: grey;
+}
+
+
+.producto1 img{
+
+    max-width: 200px;
+    margin-left: auto;
+    margin-top: 10px;
+    object-fit: scale-down; /* Para que la foto no este deforme */
+    max-height: 250px;
+    
+}
+
+.producto1 {
+    border: 3px solid grey;
+    background-color: #dce7fc ;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+   
+
+    
+}
+
+.registro2 {
+    margin-top:10px;
+    color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.creacion-de-usuario {
+    margin-bottom: 20px;
+}
+
+.boton-registro {
+    margin-bottom: 10px;
+}
+
+.enlace-login {
+    margin-bottom: 20px;
+}
+
+.pago {
+    display: inline-block; /* Hace que el enlace se comporte como un bloque */
+    padding: 10px 20px; /* Espacio alrededor del texto */
+    border: 2px solid grey; /* Borde alrededor del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #dce7fc; /* Color de fondo */
+    color: black; 
+    text-decoration: none; 
+    margin-top: 5px;
+
+}
+
+
+/* codigo css para el detalle del producto */
+
+
+/* Estilos base que se aplican independientemente del tamaño de la pantalla */
+.foto-principal {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+}
+
+.photo-iphone {
+    flex: 0 0 40%;
+    margin-right: 20px;
+}
+
+.photo-iphone img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.texto-producto {
+    flex: 0 0 60%;
+    color: white;
+}
+
+.texto-producto h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.texto-producto p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+
+
+@media screen and (max-width: 420px) {
+    .Navegacion {
+        display: none; /* Oculta la navegación en dispositivos móviles */
+    }
+    .Navegacion.mobile-menu {
+        display: flex; /* Muestra el menú de hamburguesa */
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        background-color: #dce7fc;
+        z-index: 2;
+    }
+    .Navegacion.mobile-menu ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .Navegacion.mobile-menu ul li {
+        margin-bottom: 20px;
+    }
+    .Navegacion.mobile-menu ul li a {
+        color: #223A5E;
+        text-decoration: none;
+    }
+
+
+    /* Estilos para el menú de hamburguesa en dispositivos móviles */
+
+
+    .foto-principal {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .photo-iphone {
+        flex: 0 0 100%; 
+        margin-right: 0; 
+        margin-bottom: 20px; 
+    }
+
+    .texto-producto {
+        flex: 0 0 100%;
+    }
+
+    .texto-producto h2 {
+        font-size: 24px; 
+    }
+
+    .texto-producto p {
+        font-size: 16px; 
+    }
+
+
+    header {
+        position: relative;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #223A5E;
+    }
+
+    .Carrito {
+        position: absolute;
+        top: 30px; /* Adjust the top position as needed */
+        right: calc(5px + 20px); /* Adjust the right position to place it next to the hamburger icon */
+    }
+
+    /* responsive para la pagina home (index) */
+
+    .Productos {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .Productos .productov {
+        width: 100%;
+        margin-bottom: 20px; 
+    }
+
+
+    .Recomendado .productov {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px; 
+    }
+
+    .Recomendados {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Prendas {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .ropa .productov {
+        width: 100%;
+        margin-bottom: 20px; 
+    }
+
+    /* responsive para carrito*/
+
+    .Productos-carrito {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .ropa .producto1 {
+        width: 100%;
+        margin-bottom: 20px; 
+    }
+
+
+
+
+
+}
