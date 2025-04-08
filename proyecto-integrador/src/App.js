@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Home from "./screens/Home/Home";
 import NotFound from "./screens/NotFound/NotFound";
 import SeccionPeliculas from "./components/SeccionPeliculas.js/SeccionPeliculas";
+import SeccionPelisValoradas from "./components/SeccionPelisValoradas.js/SeccionPelisValoradas";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 
       <main>
         <SeccionPeliculas/>
+        <SeccionPelisValoradas/>
       </main>
 
 
