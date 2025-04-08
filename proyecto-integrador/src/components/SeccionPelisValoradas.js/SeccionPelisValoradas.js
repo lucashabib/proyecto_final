@@ -39,7 +39,7 @@ function SeccionPelisValoradas() {
     return(
         <section className="contenedor">
 
-            <h3 className="titulo-seccion">Peliculas mas valoradas</h3>
+            <h3 className="titulo-seccion">Peliculas con Mayor Valoración</h3>
 
             <div className="peliculas-valoradas">
                 {

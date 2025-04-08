@@ -37,21 +37,13 @@ function SeccionPeliculas(){
     return (
         <section className='contenedor'>
 
-            <h3 className="titulo-seccion">Peliculas en cartelera</h3>
-
-
+            <h3 className="titulo-seccion">Peliculas en Cartelera</h3>
 
             <div className='peliculas-populares'>
             {
                 peliculasData.map((elm, idx)=> <Pelicula data={elm}/> )
             }
             </div>
-
-
-
-           
-           
-
 
         </section>
     )
