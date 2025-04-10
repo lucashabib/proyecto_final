@@ -1,9 +1,10 @@
 import React from "react";
-import Pelicula from "./Pelicula";
+import PeliValorada from "./PeliValorada";
 import './styles.css'
 
-function SeccionPeliculas(){
-    const peliculasData = [
+function SeccionPelisValoradas() {
+
+    const pelisValoradas = [
         {
             poster: '',
             title: 'Peli 1',
@@ -31,22 +32,24 @@ function SeccionPeliculas(){
             director: 'Director',
             duracion: 'Duracion',
             categoria:'Categoria'
-        },
+        }
     ]
 
-    return (
-        <section className='contenedor'>
 
-            <h3 className="titulo-seccion">Peliculas en Cartelera</h3>
+    return(
+        <section className="contenedor">
 
-            <div className='peliculas-populares'>
-            {
-                peliculasData.map((elm, idx)=> <Pelicula data={elm}/> )
-            }
+            <h3 className="titulo-seccion">Peliculas con Mayor Valoración</h3>
+
+            <div className="peliculas-valoradas">
+                {
+                    pelisValoradas.map((elm, idx) => <PeliValorada data={elm} /> )
+                }
             </div>
+
 
         </section>
     )
 }
 
-export default SeccionPeliculas
+export default SeccionPelisValoradas

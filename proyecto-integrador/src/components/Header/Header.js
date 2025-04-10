@@ -6,21 +6,21 @@ import { Link } from 'react-router-dom';
 function Header(){
     const opciones = [
         {
-            nombre: 'Home',
+            nombre: 'HOME',
             path: '/'
         },
         {
-            nombre: 'Accion',
+            nombre: 'ACCIÓN',
             path: '/category'
 
         },
         {
-            nombre: 'Drama',
+            nombre: 'DRAMA',
             path: '/category'
 
         },
         {
-            nombre: 'Comedia',
+            nombre: 'COMEDIA',
             path: '/category'
 
         },

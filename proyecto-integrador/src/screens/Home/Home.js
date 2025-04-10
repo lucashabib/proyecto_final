@@ -1,12 +1,12 @@
 import React from "react"
 import CarteleraAcortada from "../CarteleraAcordata/CarteleraAcortada";
-
+import './styles.css'
 
 function Home(){
     return(
     <React.Fragment>
 
-      <h1>Bienvenidos a Cine Score</h1>
+      <h className="Titulo">Bienvenidos a Cine Score</h1>
 
     <main>
     <h2>Peliculas En Cartelera</h2>
@@ -18,5 +18,4 @@ function Home(){
 }
 
 export default Home;
-
 
