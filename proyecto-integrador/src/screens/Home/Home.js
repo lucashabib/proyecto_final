@@ -6,7 +6,7 @@ function Home(){
     return(
     <React.Fragment>
 
-      <h className="Titulo">Bienvenidos a Cine Score</h1>
+      <h1 className="Titulo">Bienvenidos a Cine Score</h1>
 
     <main>
     <h2>Peliculas En Cartelera</h2>

@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./screens/Home/Home";
 import NotFound from "./screens/NotFound/NotFound";
-import SeccionPeliculas from "./components/SeccionPeliculas.js/SeccionPeliculas";
+
 import PeliculaCartela from "./screens/PeliculasCartelera/PeliculasCartelera";
 
 
@@ -22,16 +22,11 @@ function App() {
         <Route path={'/peliculasCartelera'} component={PeliculaCartela} />
         <Route path={""} component={NotFound} />
       </Switch>
+ 
 
-      <main>
-        <SeccionPeliculas/>
-      </main>
-
+    </>
 
      
-      
-
-    </React.Fragment>
   );
 }
 
