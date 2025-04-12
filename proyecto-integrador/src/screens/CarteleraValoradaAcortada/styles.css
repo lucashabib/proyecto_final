@@ -1,0 +1,21 @@
+.contenedor-boton {
+    display: flex;
+    justify-content: flex-end; /* Alinea a la derecha */
+    margin-top: 20px; /* opcional, para separación */
+  }
+  
+  .btn-ver-todas {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-ver-todas:hover {
+    background-color: #0056b3;
+  }
+  

@@ -6,6 +6,7 @@ import Home from "./screens/Home/Home";
 import NotFound from "./screens/NotFound/NotFound";
 
 import PeliculaCartela from "./screens/PeliculasCartelera/PeliculasCartelera";
+import PelisValoradasCartelera from "./screens/PelisValoradasCartelera/PelisValoradasCartelera";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Switch>
         <Route path={"/"} exact={true} component={Home} />
         <Route path={'/peliculasCartelera'} component={PeliculaCartela} />
+        <Route path={'/pelisValoradasCartelera'} component={PelisValoradasCartelera} />
         <Route path={""} component={NotFound} />
       </Switch>
  
