@@ -2,6 +2,8 @@ import React from "react";
 import OpcionesMenu from "./OpcionesMenu";
 import './styles.css'
 import { Link } from 'react-router-dom';
+import Buscador from "../Buscador/Buscador";
+
 
 function Header(){
     const opciones = [
@@ -31,9 +33,17 @@ function Header(){
 
     return (
         <header className="Header">
+            <>
              <div className="LogoContainer">
+             <Link to="/">
             <img src="/Logo-png.png" alt="Logo Swift Cart" className="Logo" />
-            </div>
+            </Link>
+             </div>
+
+             <div className="BuascadorContainer">
+                 
+       
+             </div>
 
 
             <div className="OpcionesMenu">
@@ -45,7 +55,7 @@ function Header(){
                     <button className="FavoritosBtn">Ver Favoritos</button>
                 </Link>
             </div>
-            
+            </>
         </header>
     )
 }
