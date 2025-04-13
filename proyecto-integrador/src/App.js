@@ -4,7 +4,8 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./screens/Home/Home";
 import NotFound from "./screens/NotFound/NotFound";
-import PeliTodas from "./screens/PeliTodas/PeliTodas";
+import Resultados from './screens/Resultados/Resultados'
+
 
 import PeliculaCartela from "./screens/PeliculasCartelera/PeliculasCartelera";
 import PelisValoradasCartelera from "./screens/PelisValoradasCartelera/PelisValoradasCartelera";
@@ -27,7 +28,8 @@ function App() {
         <Route path={'/pelisValoradasCartelera'} component={PelisValoradasCartelera} />
         <Route path={'/detallePelisValoradas/:id'} component={DetallePelisValoradas} />
         <Route path={'/detallePelisCartelera/:id'} component={DetallePelisCartelera} />
-        <Route path={'/PeliTodas'} component={PeliTodas} />
+        <Route path={'/resultados/:busqueda'} component={Resultados} />
+     
         <Route path={""} component={NotFound} />
       </Switch>
  

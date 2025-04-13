@@ -3,9 +3,22 @@ import CarteleraAcortada from "../CarteleraAcordata/CarteleraAcortada";
 import CarteleraValoradaAcortada from "../CarteleraValoradaAcortada/CarteleraValoradaAcortada";
 import './styles.css'
 
-function Home(){
+import Buscador from "../../components/Buscador/Buscador";
+
+
+function Home(props){
   return(
     <React.Fragment>
+         <div className="BuascadorContainer">
+         <Buscador history={props.history}/>
+                
+                 
+       
+        </div>
+   
+
+    
+
 
       <h1 className="Titulo">Bienvenidos a Cine Score</h1>
 

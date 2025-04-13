@@ -1,5 +1,4 @@
-import React, {Component, component} from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import React, {Component} from "react";
 
 
 class Buscador extends Component {
@@ -10,23 +9,28 @@ class Buscador extends Component {
         }
 
     }
-    manejarSubmit(e){
-        e.preventDefault();
-        
+    controlarForm(evento){
+        evento.preventDefault()
+        this.props.history.push('/resultados/'+ this.state.valorInput)
     }
-    controlarInput(e){
-        console.log(e)
-        this.setState({valorInput: e.target.value}, () => this.props.filtro(this.state.valorInput)   )
 
+
+    controlarInput(evento){
+        this.setState({valorInput: evento.target.value})
     }
-    render(){
-        return(
-            <form onSubmit={(e)=> this.manejarSubmit(e)}>
-                <input onChange={(e)=> this.controlarInput(e)} value={this.state.valorInput}/>
-             
-            </form>
-        )
-    }
+render(){
+    return(
+        <form onSubmit ={(evento) => this.controlarForm(evento)}>
+
+            <input placeholder ='Buscador' value={this.state.valorInput} 
+            onChange={(evento)=> this.controlarInput(evento)} />
+
+            <button type='submit'>Buscar</button>
+
+        </form>
+
+    )
+}
 
 
 }

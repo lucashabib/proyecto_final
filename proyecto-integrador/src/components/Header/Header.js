@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Buscador from "../Buscador/Buscador";
 
 
-function Header(){
+function Header(props){
     const opciones = [
         {
             nombre: 'HOME',
@@ -40,11 +40,7 @@ function Header(){
             </Link>
              </div>
 
-             <div className="BuascadorContainer">
-                 
-       
-             </div>
-
+          
 
             <div className="OpcionesMenu">
             <OpcionesMenu opciones={opciones}/>
