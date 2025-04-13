@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {Link} from "react-router-dom";
 import './styles.css'
 
 export default class CarteleraValoradaCard extends Component {
@@ -19,7 +20,9 @@ export default class CarteleraValoradaCard extends Component {
                         alt={this.state.dataCarteleraValorada.title}
                         className="moviePoster" 
                     />
-                    <h4>{this.state.dataCarteleraValorada.title}</h4>
+                    <Link to={`/detallePelisValoradas/${this.state.dataCarteleraValorada.id}`}>
+                        <h4>{this.state.dataCarteleraValorada.title}</h4>
+                    </Link>
                     <p>{this.state.dataCarteleraValorada.overview}</p>
                 </div>
             </div>

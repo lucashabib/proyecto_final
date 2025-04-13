@@ -1,0 +1,60 @@
+/* Contenedor principal con dos columnas */
+.detalle-peliculaCartelera {
+    display: grid;
+    grid-template-columns: 300px 1fr; /* 300px para la columna de la imagen, el resto para info */
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #0a0f1c; /* Fondo oscuro, como en tu estilo actual */
+}
+
+/* Contenedor para la parte izquierda: título y póster */
+.detalle-poster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título encima del póster */
+.detalle-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Imagen del póster con estilos */
+.moviePosterDetalle {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+}
+
+/* Contenedor de información textual de la película */
+.detalle-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+/* Estilos adicionales para los párrafos y la lista */
+.texto-PelisCartelera {
+    margin: 0.8rem 0;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.detalle-info ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    padding-left: 0;
+    color: #ffffff;
+}
+
+
+
