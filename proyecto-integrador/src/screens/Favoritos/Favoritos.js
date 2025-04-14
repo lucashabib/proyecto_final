@@ -1,4 +1,6 @@
 import React , { Component } from 'react'
+import { Link } from 'react-router-dom'
+import './styles.css'
 
 export default class Favorito extends Component {
     constructor(props){
@@ -6,6 +8,45 @@ export default class Favorito extends Component {
         this.state = {
             peliculasFav : [],
         }
+    }
+
+    ocultar(id){
+        this.setState({
+            [`mostrarContenido-${id}`]: !this.state[`mostrarContenido-${id}`]
+        })
+    }
+
+    agregarFavoritos(id){
+        let storage = localStorage.getItem('favoritos')
+        if(storage !== null){
+            let arrParseado = JSON.parse(storage)
+            arrParseado.push(id)
+            let arrStringificado = JSON.stringify(arrParseado)
+            localStorage.setItem('favoritos', arrStringificado)
+        } else {
+            let primerID = [id]
+            let arrStringificado = JSON.stringify(primerID)
+            localStorage.setItem('favoritos', arrStringificado)
+        }
+
+        this.setState({
+            [`favorito-${id}`]: true
+        })
+    }
+
+    sacarFavoritos(id){
+        const storage = localStorage.getItem('favoritos')
+        const storageParseado = JSON.parse(storage)
+        const filtrarStorage = storageParseado.filter((elm) => elm !== id)
+        const storageStringificado = JSON.stringify(filtrarStorage)
+        localStorage.setItem('favoritos', storageStringificado)
+
+        const nuevasPeliculas = this.state.peliculasFav.filter(peli => peli.id !== id)
+
+        this.setState({
+            peliculasFav: nuevasPeliculas,
+            [`favorito-${id}`]: false
+        })
     }
 
     componentDidMount(){
@@ -25,7 +66,12 @@ export default class Favorito extends Component {
                 )
                 .then((data) => {
                     const peliculasValidas = data.filter(pelicula => pelicula !== undefined)
-                    this.setState({ peliculasFav: peliculasValidas })
+                    let nuevoEstado = { peliculasFav: peliculasValidas }
+                    peliculasValidas.forEach(peli => {
+                        nuevoEstado[`favorito-${peli.id}`] = true
+                        nuevoEstado[`mostrarContenido-${peli.id}`] = false
+                    })
+                    this.setState(nuevoEstado)
                 })                
                 .catch(e => console.log(e))
             }           
@@ -33,28 +79,58 @@ export default class Favorito extends Component {
     }
 
     render() {
-        const { peliculasFav } = this.state;
-
         return (
             <div>
                 <h2>Mis Favoritos</h2>
 
                 {
-                    peliculasFav.length === 0 ? (
-                        <h3>No tienes películas favoritas seleccionadas</h3>
-                    ) : (
-                        <div className="peliculas-favoritas">
-                            {peliculasFav.map((pelicula, idx) => (
-                                <div key={idx + pelicula.id}>
-                                    <h3>{pelicula.title}</h3>
-                                    <img
-                                        src={`https://image.tmdb.org/t/p/w200${pelicula.poster_path}`}
-                                        alt={pelicula.title}
-                                    />
+                    this.state.peliculasFav.length === 0 ?
+                    <h3>No tienes películas favoritas seleccionadas</h3>
+                    :
+                    <div className="peliculas-populares">
+                        {
+                            this.state.peliculasFav.map((pelicula, idx) => (
+                                <div className='data-pelicula' key={idx + pelicula.id}>
+                                    <div className='carta-contenido'>
+                                        <img
+                                            src={`https://image.tmdb.org/t/p/w342${pelicula.poster_path}`}
+                                            alt={pelicula.title}
+                                            className="moviePoster"
+                                        />
+                                        
+                                        <h4>{pelicula.title}</h4>
+
+                                        {
+                                            this.state[`mostrarContenido-${pelicula.id}`] === true ?
+                                            <>
+                                                <p>{pelicula.overview}</p>
+                                            </>
+                                            :
+                                            ''
+                                        }
+
+                                        <button>
+                                            <Link to={`/detallePelisCartelera/${pelicula.id}`}>Detalle Completo</Link>
+                                        </button>
+
+                                        <button onClick={() => this.ocultar(pelicula.id)}>
+                                            Descripción
+                                        </button>
+
+                                        {
+                                            this.state[`favorito-${pelicula.id}`] ?
+                                            <button onClick={() => this.sacarFavoritos(pelicula.id)}>Sacar de Favoritos</button>
+                                            :
+                                            <button onClick={() => this.agregarFavoritos(pelicula.id)}>
+                                                Agregar a Favoritos
+                                            </button>
+                                        }
+
+                                    </div>
                                 </div>
-                            ))}
-                        </div>
-                    )
+                            ))
+                        }
+                    </div>
                 }
             </div>
         )

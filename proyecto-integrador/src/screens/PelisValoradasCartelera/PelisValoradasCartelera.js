@@ -6,18 +6,31 @@ class PelisValoradasCartelera extends Component {
     constructor(props){
         super(props)
         this.state={
-            carteleraValoradas: []
+            carteleraValoradas: [],
+            paginaActual : 0
         }
     }
 
     componentDidMount(){
         fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=d354a91a93cd35091af35780dc100a8a')
         .then((response) => response.json())
-        .then((data) => this.setState({
-            carteleraValoradas:data.results
+        .then((data) => this.setState({ 
+            carteleraValoradas:data.results,
+            paginaActual : 1
         }))
         .catch((error) => console.log(error))
     }
+
+    cargarMas(){
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=d354a91a93cd35091af35780dc100a8a&page=${this.state.paginaActual + 1}`)
+            .then(resp => resp.json())
+            .then(data => this.setState({
+                carteleraValoradas: this.state.carteleraValoradas.concat(data.results),
+                paginaActual: this.state.paginaActual + 1
+            }))
+            .catch(err => console.log(err))
+    }
+    
 
     render(){
         return(
@@ -29,6 +42,9 @@ class PelisValoradasCartelera extends Component {
                     this.state.carteleraValoradas.map((elm, idx) => <CarteleraValoradaCard data={elm} key={idx + elm.id}/>)
                 }
             </div>
+            <button onClick={() => this.cargarMas()}>
+                Cargar Mas Peliculas
+            </button>
 
             </>
         )
