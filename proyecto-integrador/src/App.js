@@ -11,6 +11,7 @@ import PeliculaCartela from "./screens/PeliculasCartelera/PeliculasCartelera";
 import PelisValoradasCartelera from "./screens/PelisValoradasCartelera/PelisValoradasCartelera";
 import DetallePelisValoradas from "./screens/DetallePelisValoradas/DetallePelisValoradas";
 import DetallePelisCartelera from "./screens/DetallePelisCartelera/DetallePelisCartelera";
+import Favoritos from "./screens/Favoritos/Favoritos";
 
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
         <Route path={'/detallePelisValoradas/:id'} component={DetallePelisValoradas} />
         <Route path={'/detallePelisCartelera/:id'} component={DetallePelisCartelera} />
         <Route path={'/resultados/:busqueda'} component={Resultados} />
+        <Route path={'/favoritos'} component={Favoritos} />
+
      
         <Route path={""} component={NotFound} />
       </Switch>
