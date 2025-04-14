@@ -12,22 +12,9 @@ function Header(props){
             path: '/'
         },
         {
-            nombre: 'ACCIÓN',
-            path: '/category'
-
-        },
-        {
-            nombre: 'DRAMA',
-            path: '/category'
-
-        },
-        {
-            nombre: 'COMEDIA',
-            path: '/category'
-
-        },
-
-       
+            nombre: 'VER FAVORITOS',
+            path: '/favoritos'
+        }       
     ]
 
 

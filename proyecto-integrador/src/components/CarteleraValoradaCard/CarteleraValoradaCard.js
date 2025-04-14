@@ -11,6 +11,12 @@ export default class CarteleraValoradaCard extends Component {
         }
     }
 
+    ocultar(){
+        this.setState({
+            mostrarContenido: !this.state.mostrarContenido
+        })
+    }
+
     render(){
         return(
             <div className='data-pelicula'>
@@ -20,10 +26,21 @@ export default class CarteleraValoradaCard extends Component {
                         alt={this.state.dataCarteleraValorada.title}
                         className="moviePoster" 
                     />
-                    <Link to={`/detallePelisValoradas/${this.state.dataCarteleraValorada.id}`}>
-                        <h4>{this.state.dataCarteleraValorada.title}</h4>
-                    </Link>
-                    <p>{this.state.dataCarteleraValorada.overview}</p>
+                    <h4>{this.state.dataCarteleraValorada.title}</h4>
+                    {
+                    this.state.mostrarContenido === true ?
+                    <>
+                        <p>{this.state.dataCarteleraValorada.overview}</p>
+                    </>
+                    :
+                    ''
+                    }
+                    <button>
+                    <Link to={`/detallePelisValoradas/${this.state.dataCarteleraValorada.id}`}>Detalle Completo</Link>
+                    </button>
+                    <button onClick={() => this.ocultar()}>
+                    Descripción
+                    </button>
                 </div>
             </div>
         )
