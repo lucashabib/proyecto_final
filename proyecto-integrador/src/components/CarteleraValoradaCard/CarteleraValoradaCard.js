@@ -69,26 +69,26 @@ export default class CarteleraValoradaCard extends Component {
                         alt={this.state.dataCarteleraValorada.title}
                         className="moviePoster" 
                     />
-                    <h4>{this.state.dataCarteleraValorada.title}</h4>
+                    <h4 className ='texto_dataCartelera'>{this.state.dataCarteleraValorada.title}</h4>
                     {
                     this.state.mostrarContenido === true ?
                     <>
-                        <p>{this.state.dataCarteleraValorada.overview}</p>
+                        <p className ='texto_dataCartelera'>{this.state.dataCarteleraValorada.overview}</p>
                     </>
                     :
                     ''
                     }
-                    <button>
+                    <button className ='botones'>
                     <Link to={`/detallePelisValoradas/${this.state.dataCarteleraValorada.id}`}>Detalle Completo</Link>
                     </button>
-                    <button onClick={() => this.ocultar()}>
+                    <button className ='botones'onClick={() => this.ocultar()}>
                     Descripción
                     </button>
                     {
                     this.state.favorito ?
-                    <button onClick={() => this.sacarFavoritos(this.state.dataCarteleraValorada.id)}>Sacar de Favoritos</button>
+                    <button className ='botones'onClick={() => this.sacarFavoritos(this.state.dataCarteleraValorada.id)}>Sacar de Favoritos</button>
                     :
-                    <button onClick={() => this.agregarFavoritos(this.state.dataCarteleraValorada.id)}>
+                    <button className ='botones'onClick={() => this.agregarFavoritos(this.state.dataCarteleraValorada.id)}>
                         Agregar a Favoritos
                     </button>
                 }

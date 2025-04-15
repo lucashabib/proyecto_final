@@ -112,11 +112,11 @@ export default class DetallePelisCartelera extends Component {
                     </div>
 
                     {favorito ? (
-                        <button onClick={() => this.sacarFavoritos(dataPeliculaDetalle.id)}>
+                        <button className='botones'onClick={() => this.sacarFavoritos(dataPeliculaDetalle.id)}>
                             Sacar de Favoritos
                         </button>
                     ) : (
-                        <button onClick={() => this.agregarFavoritos(dataPeliculaDetalle.id)}>
+                        <button className='botones'onClick={() => this.agregarFavoritos(dataPeliculaDetalle.id)}>
                             Agregar a Favoritos
                         </button>
                     )}

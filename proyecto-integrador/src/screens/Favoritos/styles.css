@@ -58,3 +58,17 @@ body {
     background-color: #0a0f1c;
     color: white;
 }
+
+.botones {
+    background-color: #ccc;
+    color: #000;
+    border: none;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.botones:hover {
+    background-color: #bbb;
+}
+

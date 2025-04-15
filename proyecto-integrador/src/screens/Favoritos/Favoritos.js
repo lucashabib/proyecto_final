@@ -109,19 +109,19 @@ export default class Favorito extends Component {
                                             ''
                                         }
 
-                                        <button>
+                                        <button className='botones'>
                                             <Link to={`/detallePelisCartelera/${pelicula.id}`}>Detalle Completo</Link>
                                         </button>
 
-                                        <button onClick={() => this.ocultar(pelicula.id)}>
+                                        <button className='botones' onClick={() => this.ocultar(pelicula.id)}>
                                             Descripción
                                         </button>
 
                                         {
                                             this.state[`favorito-${pelicula.id}`] ?
-                                            <button onClick={() => this.sacarFavoritos(pelicula.id)}>Sacar de Favoritos</button>
+                                            <button className='botones' onClick={() => this.sacarFavoritos(pelicula.id)}>Sacar de Favoritos</button>
                                             :
-                                            <button onClick={() => this.agregarFavoritos(pelicula.id)}>
+                                            <button className='botones' onClick={() => this.agregarFavoritos(pelicula.id)}>
                                                 Agregar a Favoritos
                                             </button>
                                         }

@@ -78,17 +78,17 @@ export default class CarteleraCard extends Component {
                     :
                     ''
                 }
-                <button className ='texto_dataCartelera'>
+                <button className ='botones'>
                     <Link to={`/detallePelisCartelera/${this.state.dataCartelera.id}`}>Detalle Completo</Link>
                 </button>
-                <button className ='texto_dataCartelera' onClick={() => this.ocultar()}>
+                <button className ='botones' onClick={() => this.ocultar()}>
                     Descripción
                 </button>
                 {
                     this.state.favorito ?
-                    <button className ='texto_dataCartelera' onClick={() => this.sacarFavoritos(this.state.dataCartelera.id)}>Sacar de Favoritos</button>
+                    <button className ='botones' onClick={() => this.sacarFavoritos(this.state.dataCartelera.id)}>Sacar de Favoritos</button>
                     :
-                    <button className ='texto_dataCartelera' onClick={() => this.agregarFavoritos(this.state.dataCartelera.id)}>
+                    <button className ='botones' onClick={() => this.agregarFavoritos(this.state.dataCartelera.id)}>
                         Agregar a Favoritos
                     </button>
                 }
