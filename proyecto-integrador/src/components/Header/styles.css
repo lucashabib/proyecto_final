@@ -1,19 +1,17 @@
-/* Contenedor del Header */
-
 .Header {
-    position: relative; /* Necesario para posicionar el botón */
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #000000;
     padding: 20px;
-    padding-top: 60px; /* espacio para el botón en la parte superior */
+    padding-top: 60px;
 }
 
 .FavoritosContainer {
     position: absolute;
-    bottom: 20px; /* ✅ ubica el botón abajo */
-    right: 30px;  /* ✅ ubica el botón a la derecha */
+    bottom: 20px;
+    right: 30px; 
 }
 
 .Logo {
@@ -29,21 +27,18 @@
 }
 
 
-/* Lista del menú */
 .Header ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-/* Cada ítem de la lista */
 .Header li {
     display: inline-block;
     margin: 0 50px;
 
 }
 
-/* Enlaces */
 .Header a {
     color: #00B5F1;
     text-decoration: none;
@@ -54,12 +49,5 @@
 }
 
 .Header a:hover {
-    color: #FF6347; /* color al pasar el mouse */
-}
-
-/*Boton Favoritos*/
-.FavoritosBtn{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 15px;
-    font-style: italic;
+    color: #FF6347; 
 }

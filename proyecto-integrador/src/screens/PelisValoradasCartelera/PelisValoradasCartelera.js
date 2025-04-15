@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import CarteleraValoradaCard from "../../components/CarteleraValoradaCard/CarteleraValoradaCard";
+import Buscador from "../../components/Buscador/Buscador";
 
 class PelisValoradasCartelera extends Component {
 
@@ -35,6 +36,9 @@ class PelisValoradasCartelera extends Component {
     render(){
         return(
             <>
+                <div className="buscadorContainer">
+                    <Buscador history={this.props.history} />
+                </div>
 
             <h1>Peliculas mas Valoradas</h1>
             <div className="peliculas-masValoradas">

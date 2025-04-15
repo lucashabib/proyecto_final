@@ -69,26 +69,26 @@ export default class CarteleraCard extends Component {
                     className="moviePoster"
                 />
                 
-                    <h4>{this.state.dataCartelera.title}</h4>
+                    <h4 className ='texto_dataCartelera'>{this.state.dataCartelera.title}</h4>
                 {
                     this.state.mostrarContenido === true ?
                     <>
-                        <p>{this.state.dataCartelera.overview}</p>
+                        <p className ='texto_dataCartelera'>{this.state.dataCartelera.overview}</p>
                     </>
                     :
                     ''
                 }
-                <button>
+                <button className ='texto_dataCartelera'>
                     <Link to={`/detallePelisCartelera/${this.state.dataCartelera.id}`}>Detalle Completo</Link>
                 </button>
-                <button onClick={() => this.ocultar()}>
+                <button className ='texto_dataCartelera' onClick={() => this.ocultar()}>
                     Descripción
                 </button>
                 {
                     this.state.favorito ?
-                    <button onClick={() => this.sacarFavoritos(this.state.dataCartelera.id)}>Sacar de Favoritos</button>
+                    <button className ='texto_dataCartelera' onClick={() => this.sacarFavoritos(this.state.dataCartelera.id)}>Sacar de Favoritos</button>
                     :
-                    <button onClick={() => this.agregarFavoritos(this.state.dataCartelera.id)}>
+                    <button className ='texto_dataCartelera' onClick={() => this.agregarFavoritos(this.state.dataCartelera.id)}>
                         Agregar a Favoritos
                     </button>
                 }

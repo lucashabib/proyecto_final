@@ -32,12 +32,6 @@ function Header(props){
             <div className="OpcionesMenu">
             <OpcionesMenu opciones={opciones}/>
             </div>
-
-            <div className="FavoritosContainer">
-                <Link to="/favoritos">
-                    <button className="FavoritosBtn">Ver Favoritos</button>
-                </Link>
-            </div>
             </>
         </header>
     )

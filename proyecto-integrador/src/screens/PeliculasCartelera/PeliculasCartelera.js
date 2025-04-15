@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CarteleraCard from "../../components/CarteleraCard/CarteleraCard";
+import Buscador from "../../components/Buscador/Buscador";
 
 class PeliculaCartela extends Component {
 
@@ -34,6 +35,10 @@ class PeliculaCartela extends Component {
     render(){
         return (
             <>
+                <div className="buscadorContainer">
+                    <Buscador history={this.props.history} />
+                </div>
+
                 <div className="peliculas-populares">
                     {
                         this.state.cartelera.map((elm, idx) =>

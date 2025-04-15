@@ -32,7 +32,6 @@ render(){
     )
 }
 
-
 }
 
 export default Buscador
