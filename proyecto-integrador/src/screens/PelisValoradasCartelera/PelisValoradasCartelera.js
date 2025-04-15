@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import CarteleraValoradaCard from "../../components/CarteleraValoradaCard/CarteleraValoradaCard";
 import Buscador from "../../components/Buscador/Buscador";
+import FiltroCartelra from "../../components/Filtro/FiltroCartelera";
 
 class PelisValoradasCartelera extends Component {
 
@@ -17,10 +18,21 @@ class PelisValoradasCartelera extends Component {
         .then((response) => response.json())
         .then((data) => this.setState({ 
             carteleraValoradas:data.results,
+            backupPeliculas: data.results,
             paginaActual : 1
         }))
         .catch((error) => console.log(error))
     }
+
+
+    filtrarPeliculas(busquedaUsuario){
+        const PeliculasFiltrados = this.state.backupPeliculas.filter(
+            (elm) => elm.title.toLowerCase().includes(busquedaUsuario.toLowerCase())
+        )
+        this.setState({carteleraValoradas: PeliculasFiltrados})
+    }
+
+
 
     cargarMas(){
         fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=d354a91a93cd35091af35780dc100a8a&page=${this.state.paginaActual + 1}`)
@@ -36,11 +48,13 @@ class PelisValoradasCartelera extends Component {
     render(){
         return(
             <>
-                <div className="buscadorContainer">
-                    <Buscador history={this.props.history} />
-                </div>
-
+            
             <h1>Peliculas mas Valoradas</h1>
+
+            <div className="buscadorContainer">
+                <FiltroCartelra filtro={(busqueda) => this.filtrarPeliculas(busqueda)} />
+            </div>
+
             <div className="peliculas-masValoradas">
                 {
                     this.state.carteleraValoradas.map((elm, idx) => <CarteleraValoradaCard data={elm} key={idx + elm.id}/>)

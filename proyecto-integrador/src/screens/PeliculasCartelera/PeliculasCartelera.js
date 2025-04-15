@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import CarteleraCard from "../../components/CarteleraCard/CarteleraCard";
-import Buscador from "../../components/Buscador/Buscador";
-
+import FiltroCartelra from "../../components/Filtro/FiltroCartelera";
 class PeliculaCartela extends Component {
 
     constructor(props){
@@ -12,14 +11,25 @@ class PeliculaCartela extends Component {
         };
     }
 
+
+
     componentDidMount(){
         fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=9048894fcc8f2fd1f6b3222edfe3840a')
             .then((response) => response.json())
             .then((data) => this.setState({
                 cartelera: data.results,
+                backupPeliculas: data.results,
                 paginaActual: 1
             }))
             .catch((error) => console.log(error));
+    }
+
+
+    filtrarPeliculas(busquedaUsuario){
+        const PeliculasFiltrados = this.state.backupPeliculas.filter(
+            (elm) => elm.title.toLowerCase().includes(busquedaUsuario.toLowerCase())
+        )
+        this.setState({cartelera: PeliculasFiltrados})
     }
 
     cargarMas(){
@@ -36,7 +46,7 @@ class PeliculaCartela extends Component {
         return (
             <>
                 <div className="buscadorContainer">
-                    <Buscador history={this.props.history} />
+                <FiltroCartelra filtro={(busqueda) => this.filtrarPeliculas(busqueda)} />
                 </div>
 
                 <div className="peliculas-populares">

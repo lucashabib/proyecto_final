@@ -9,6 +9,7 @@ class CarteleraAcortada extends Component {
         this.state = {
             carteleraHome: []
         };
+        
     }
 
     componentDidMount() {
@@ -41,3 +42,5 @@ class CarteleraAcortada extends Component {
 }
 
 export default CarteleraAcortada ;
+
+
